@@ -30,6 +30,18 @@ Each endpoint also supports `format=json`.
 2. Run `bun run src/server.ts`
 
 ## api endpoints 
+`add format=json for the json response`
+https://githubstatapi.vercel.app/api/stats?username=
+https://githubstatapi.vercel.app/api/streak?username=
+https://githubstatapi.vercel.app/api/graph?username=
+https://githubstatapi.vercel.app/api/languages?username=
+
+## example for readme usage
+![Stats](https://githubstatapi.vercel.app/api/stats?username=Vaibhavkulshrestha12)
+![Streak](https://githubstatapi.vercel.app/api/streak?username=Vaibhavkulshrestha12)
+![Graph](https://githubstatapi.vercel.app/api/graph?username=Vaibhavkulshrestha12)
+![Languages](https://githubstatapi.vercel.app/api/languages?username=Vaibhavkulshrestha12)
+
 
 
 ## Refresh behavior
