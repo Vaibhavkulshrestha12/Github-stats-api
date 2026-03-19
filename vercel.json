@@ -1,20 +1,17 @@
 {
   "version": 2,
+  "outputDirectory": ".",
   "functions": {
     "api/stats.ts": {
-      "runtime": "@vercel/node",
       "maxDuration": 15
     },
     "api/languages.ts": {
-      "runtime": "@vercel/node",
       "maxDuration": 15
     },
     "api/graph.ts": {
-      "runtime": "@vercel/node",
       "maxDuration": 15
     },
     "api/streak.ts": {
-      "runtime": "@vercel/node",
       "maxDuration": 15
     }
   },
