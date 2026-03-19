@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "functions": {
+    "api/stats.ts": {
+      "runtime": "@vercel/node",
+      "maxDuration": 15
+    },
+    "api/languages.ts": {
+      "runtime": "@vercel/node",
+      "maxDuration": 15
+    },
+    "api/graph.ts": {
+      "runtime": "@vercel/node",
+      "maxDuration": 15
+    },
+    "api/streak.ts": {
+      "runtime": "@vercel/node",
+      "maxDuration": 15
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/stats",
+      "destination": "/api/stats"
+    },
+    {
+      "source": "/api/languages",
+      "destination": "/api/languages"
+    },
+    {
+      "source": "/api/graph",
+      "destination": "/api/graph"
+    },
+    {
+      "source": "/api/streak",
+      "destination": "/api/streak"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "X-DNS-Prefetch-Control", "value": "on" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "X-Content-Type-Options",  "value": "nosniff" },
+        { "key": "Referrer-Policy",          "value": "origin-when-cross-origin" }
+      ]
+    }
+  ]
+}
