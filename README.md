@@ -31,10 +31,10 @@ Each endpoint also supports `format=json`.
 
 ## api endpoints 
 `add format=json for the json response`
-https://githubstatapi.vercel.app/api/stats?username=
-https://githubstatapi.vercel.app/api/streak?username=
-https://githubstatapi.vercel.app/api/graph?username=
-https://githubstatapi.vercel.app/api/languages?username=
+- `https://githubstatapi.vercel.app/api/stats?username=`
+- `https://githubstatapi.vercel.app/api/streak?username=`
+- `https://githubstatapi.vercel.app/api/graph?username=`
+- `https://githubstatapi.vercel.app/api/languages?username=`
 
 ## example for readme usage
 ![Stats](https://githubstatapi.vercel.app/api/stats?username=Vaibhavkulshrestha12)
