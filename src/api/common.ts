@@ -36,7 +36,7 @@ function buildSecurityHeaders(
   contentType: string,
   extraHeaders?: HeadersInit
 ): Headers {
-  const headers = new Headers(extraHeaders);
+  const headers = new Headers();
 
   headers.set("Content-Type", contentType);
   headers.set(
@@ -57,6 +57,12 @@ function buildSecurityHeaders(
   headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
   headers.set("Access-Control-Allow-Headers", "Content-Type, If-None-Match");
   headers.set("Vary", "If-None-Match");
+
+  if (extraHeaders) {
+    new Headers(extraHeaders).forEach((value: string, key: string) => {
+      headers.set(key, value);
+    });
+  }
 
   return headers;
 }
