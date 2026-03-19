@@ -88,6 +88,22 @@ function parsePort(value: string | undefined): number {
   return parsed;
 }
 
+function resolveUpstashRestUrl(): string | null {
+  return (
+    process.env.UPSTASH_REDIS_REST_URL?.trim() ||
+    process.env.KV_REST_API_URL?.trim() ||
+    null
+  );
+}
+
+function resolveUpstashRestToken(): string | null {
+  return (
+    process.env.UPSTASH_REDIS_REST_TOKEN?.trim() ||
+    process.env.KV_REST_API_TOKEN?.trim() ||
+    null
+  );
+}
+
 export function getEnv(): EnvConfig {
   if (cachedEnv) {
     return cachedEnv;
@@ -105,8 +121,8 @@ export function getEnv(): EnvConfig {
   cachedEnv = {
     githubToken,
     port: parsePort(process.env.PORT),
-    upstashRedisRestToken: process.env.UPSTASH_REDIS_REST_TOKEN?.trim() || null,
-    upstashRedisRestUrl: process.env.UPSTASH_REDIS_REST_URL?.trim() || null,
+    upstashRedisRestToken: resolveUpstashRestToken(),
+    upstashRedisRestUrl: resolveUpstashRestUrl(),
   };
 
   return cachedEnv;
